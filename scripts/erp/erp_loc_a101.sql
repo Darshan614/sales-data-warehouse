@@ -9,6 +9,6 @@ GO
 
 
 CREATE TABLE bronze.erp_loc_a101(
-	CID NVARCHAR(50),
-	CNTRY NVARCHAR(50)
+	cid NVARCHAR(50),
+	cntry NVARCHAR(50)
 )
