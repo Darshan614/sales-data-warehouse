@@ -1,3 +1,6 @@
+USE DataWarehouse;
+GO
+
 CREATE OR ALTER PROCEDURE bronze.sp_load_bronze_erp AS
 BEGIN
 	BEGIN TRY
@@ -24,7 +27,7 @@ BEGIN
 		PRINT '=========================================';
 		PRINT 'TRUNCATING TABLE '+'bronze.erp_loc_a101';
 		TRUNCATE TABLE bronze.erp_loc_a101;
-		PRINT 'INSERTING INTO TABLE '+'bronze.erp_cust_az12';
+		PRINT 'INSERTING INTO TABLE '+'bronze.erp_loc_a101';
 		BULK INSERT bronze.erp_loc_a101
 		FROM 'C:\Users\jaind\OneDrive\Documents\Data_Warehouse\sales-data-warehouse\datasets\source_erp\LOC_A101.csv'
 		WITH (

@@ -1,3 +1,6 @@
+USE DataWarehouse;
+GO
+
 CREATE OR ALTER PROCEDURE bronze.sp_load_bronze_crm AS
 BEGIN
 	BEGIN TRY
