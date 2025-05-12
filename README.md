@@ -12,5 +12,7 @@ This project uses medieval architecture for creating a data warehouse:
 2. Silver Layer - This contains cleaned and processed data which could be used to perform analytics. It has bronze data which has gone through data cleaning, stadardisation, null value removals, etc.
 3. Gold Layer - This contains business ready data which contains combined data in form of views which could be queried to generate BI reports.
 
+Medieval Architecture:
 ![Architecture](https://github.com/Darshan614/sales-data-warehouse/blob/main/architecture/Layer%20Architecture.png)
+Data Model:
 ![DataModel](https://github.com/Darshan614/sales-data-warehouse/blob/main/architecture/DataModel%20Gold%20Layer.png)
