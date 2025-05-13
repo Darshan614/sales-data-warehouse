@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  airflow-webserver:
+    build: .
+    image: custom-airflow
+    container_name: airflow-webserver
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ../datasets:/opt/airflow/datasets
+      - ../scripts:/opt/airflow/scripts
+      - airflow_db:/opt/airflow
+    environment:
+      - LOAD_EXAMPLES=False
+    command: webserver
+
+  airflow-scheduler:
+    build: .
+    image: custom-airflow
+    container_name: airflow-scheduler
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ../datasets:/opt/airflow/datasets
+      - ../scripts:/opt/airflow/scripts
+      - airflow_db:/opt/airflow
+    command: scheduler
+
+  airflow-triggerer:
+    build: .
+    image: custom-airflow
+    container_name: airflow-triggerer
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ../datasets:/opt/airflow/datasets
+      - ../scripts:/opt/airflow/scripts
+      - airflow_db:/opt/airflow
+    environment:
+      - LOAD_EXAMPLES=False
+    command: triggerer
+
+volumes:
+  airflow_db:
